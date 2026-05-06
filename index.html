@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(circle at top, #2b2b2b 0%, #050505 100%);
+        color: #f8f8f8;
+        font-family: Inter, system-ui, sans-serif;
+      }
+      #root {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      button, select { font: inherit; }
+      button {
+        cursor: pointer;
+        border: none;
+        border-radius: 0.9rem;
+      }
+      canvas { background: #111; display: block; }
+      .max-w-3xl { max-width: 60rem; }
+      .border { border: 1px solid rgba(255,255,255,0.18); }
+      .rounded-xl { border-radius: 1rem; }
+      .rounded-2xl { border-radius: 1.25rem; }
+      .rounded-3xl { border-radius: 1.5rem; }
+      .shadow-2xl { box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+      .bg-black { background: #000 !important; }
+      .bg-white\/5 { background: rgba(255,255,255,0.14) !important; }
+      .bg-black\/30 { background: rgba(0,0,0,0.45) !important; }
+      .text-white\/70 { color: rgba(255,255,255,0.78); }
+      .text-white\/80 { color: rgba(255,255,255,0.88); }
+      .text-gray-400 { color: #d1d5db; }
+      .border-white\/10 { border-color: rgba(255,255,255,0.16); }
+      .border-gray-500 { border-color: #6b7280; }
+      .border-gray-700 { border-color: #374151; }
+      .p-6 { padding: 1.5rem; }
+      .p-8 { padding: 2rem; }
+      .p-4 { padding: 1rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+      .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+      .mt-6 { margin-top: 1.5rem; }
+      .text-center { text-align: center; }
+      .font-black { font-weight: 900; }
+      .font-bold { font-weight: 700; }
+      .text-4xl { font-size: 2.25rem; line-height: 1.1; }
+      .text-5xl { font-size: 3rem; line-height: 1.1; }
+      .text-xl { font-size: 1.25rem; }
+      .text-lg { font-size: 1.125rem; }
+      .grid { display: grid; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+      @media (min-width: 768px) {
+        .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" src="./Tetris.js"></script>
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Tetris />);
+    </script>
+    <script>
+      if (!window.Tetris) {
+        document.getElementById("root").textContent = "Tetris failed to load. Refresh the page or use a browser with network access.";
+      }
+    </script>
+  </body>
+</html>
